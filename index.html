@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取外链地址网站标志图标</title>
+</head>
+<body>
+    <h1>获取外链地址网站标志图标</h1>
+    <p>
+        有时候需要展示外链的网站标识图标;比如在登录页展示网站可以支持的浏览器并且提供点击下载对应浏览器的图标,<br/>
+        以前的做法都是找到对应的图标然后复制到项目中来展示,<br/>
+        但这样做可能更新不及时,官网的图标都变了我们才后知后觉,<br/>
+        下面的方法我试了试也可以展示对应网站的标志图标,方法是:<br/>
+        <span style="color:green"><q>网站根路径</q>+<q>/favicon.ico</q></span><br/>
+        <span style="color: red">但只支持官网的图标,像ie浏览器的官网图标是微软的图标...</span><br/>
+        <span style="color: red">而且有些官网被墙了,像chrome浏览器的官网图标获取不到...</span><br/>
+        这一说其实限制好大啊,不过对于大部分站点还可以用(如下)
+    </p>
+    <style>
+        a{
+            padding-left: 16px;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            background-position:0 center;
+        }
+    </style>
+    <a href="https://www.microsoft.com" target="_blank">ie浏览器(展示的微软标识)</a>
+    <a href="http://www.google.com/" target="_blank">google浏览器(被墙了)</a>
+    <a href="http://www.firefox.com.cn/" target="_blank">firefox浏览器</a>
+    <a href="http://se.360.cn/" target="_blank">360浏览器</a>
+    <a href="https://liulanqi.baidu.com/">百度浏览器</a>
+    <a href="http://browser.qq.com/">qq浏览器</a>
+    <a href="http://www.uc.cn/">UC浏览器</a>
+    <br>
+    <a href="http://weibo.com/">新浪微博</a>
+    <a href="http://qzone.qq.com/">qq空间</a>
+    <a href="http://t.qq.com/">腾讯微博</a>
+    <a href="http://blog.163.com/">网易博客</a>
+    <a href="https://www.douban.com/">豆瓣</a>
+    <a href="https://www.zhihu.com/">知乎</a>
+    <br>
+    <a href="https://github.com/">github</a>
+    <a href="https://nodejs.org/">nodejs</a>
+    <a href="http://getbootstrap.com/">bootstrap</a>
+    <a href="http://www.gulpjs.com.cn/">gulp</a>
+    <a href="http://yeoman.io/">yeoman</a>
+    <a href="http://jquery.com/">jquery</a>
+    <script>
+        [].forEach.call(document.querySelectorAll("a"),function(a){
+            a.style.backgroundImage="url("+ a.getAttribute("href")+"/favicon.ico)";
+        });
+    </script>
+</body>
+</html>
